@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TestForm} from "./SignupForm";
+import {TestForm} from "./TestForm";
 
 export class App extends Component {
   render() {
