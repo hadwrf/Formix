@@ -1,5 +1,12 @@
 nodejs versiyonunu 14.5'e güncellemek gerekiyor.
 
+## Notlar
+
+Formik komponenti olmayan bir komponenti Formik'in sunmuş olduğu HOC fonksiyonu ile (withFormik()) hoçlayabiliyoruz. 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
