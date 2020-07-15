@@ -3,6 +3,7 @@ import {FieldArray, Formik} from "formik";
 import "./styles.css";
 import {IdentifierFormElement} from "./IdentifierForm";
 import * as yup from "yup";
+import {IFacility} from "./types/types";
 
 const validationSchema = yup.object({
     identifierEntity: yup.object({
@@ -16,13 +17,17 @@ const validationSchema = yup.object({
     )
 });
 
-export const TestForm = () => {
+interface FacilityFormProps {
+    initialValues: IFacility
+}
 
+export const FacilityForm = ({initialValues}: FacilityFormProps) => {
     return (
         <Formik
-            initialValues={{identifierEntity: {}, identifierList: [{value: "", organization: "", id: "" + Math.random()}]}}
+            initialValues={initialValues || {identifierEntity: {value: "dwd"}, identifierList: [{value: "", organization: "", id: "" + Math.random()}]}}
             onSubmit={data => {alert(JSON.stringify(data, null, 2))}}
             validationSchema={validationSchema}
+            validateOnChange={false}
         >
             {formik => (
                 <>
