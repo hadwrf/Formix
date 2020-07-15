@@ -3,8 +3,11 @@ import {FacilityForm} from "./FacilityForm";
 
 
 const entity = {
-    identifierEntity: {value: "asds", organization: "edsd"},
-    identifierList: [{value: "asds", organization: "edsd"},{value: "asds", organization: "edsd"}]
+    identifierEntity: {value: "value", organization: "organization"},
+    identifierList: [
+        {value: "first val", organization: "first org"},
+        {value: "second val", organization: "second org"}
+    ]
 };
 
 

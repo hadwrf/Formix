@@ -39,7 +39,7 @@ export const FacilityForm = ({initialValues}: FacilityFormProps) => {
                         render={arrayHelpers => (
                             <div>
                                 {formik.values.identifierList.map((identifier, index) => (
-                                    <div key={identifier.id}>
+                                    <div key={`key-${index}`}>
                                         <IdentifierFormElement name={`identifierList[${index}]`} type="text"/>
                                         <button type="button" onClick={() => arrayHelpers.remove(index)}>-</button>
                                     </div>
