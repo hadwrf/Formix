@@ -3,7 +3,7 @@ import {useField} from "formik";
 
 
 export const IdentifierFormElement = ({...props }: any) => {
-    const [field, meta] = useField(props);
+    const [field] = useField(props);
     return (
         <div className="bordered">
 

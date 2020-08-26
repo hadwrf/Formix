@@ -4,6 +4,7 @@ import "./styles.css";
 import {IdentifierFormElement} from "./IdentifierForm";
 import * as yup from "yup";
 import {IFacility} from "./types/types";
+import { PopupForm } from "./PopupForm";
 
 const validationSchema = yup.object({
     identifierEntity: yup.object({
@@ -22,9 +23,14 @@ interface FacilityFormProps {
 }
 
 export const FacilityForm = ({initialValues}: FacilityFormProps) => {
+
     return (
         <Formik
-            initialValues={initialValues || {identifierEntity: {value: "dwd"}, identifierList: [{value: "", organization: "", id: "" + Math.random()}]}}
+            initialValues={initialValues || {
+                identifierEntity: {value: "dwd"}, 
+                identifierList: [{value: "", organization: "", id: "" + Math.random()}],
+                popupEntity: {value:"initial Popup value"}
+            }}
             onSubmit={data => {alert(JSON.stringify(data, null, 2))}}
             validationSchema={validationSchema}
             validateOnChange={false}
@@ -49,6 +55,8 @@ export const FacilityForm = ({initialValues}: FacilityFormProps) => {
                         )}
                     />
 
+                    <PopupForm>Naber</PopupForm>
+                                          
                     <button type="submit">Submit</button>
                     <pre>{JSON.stringify(formik.values, null, 2)}</pre>
                     <pre>{JSON.stringify(formik.errors, null, 2)}</pre>
